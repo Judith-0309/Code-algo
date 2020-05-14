@@ -1,0 +1,355 @@
+Exercice 1
+ALGORITHME Programme_Division
+Var a, b ,qr , r , qe : entiers
+     Début:
+                 Ecrire ( “entrer la valeur de a” )
+                 Lire ( a )
+                 Ecrire ( “entrer la valeur de b”)
+                 Lire ( b )
+      qe <-  floor ( a/b )
+Afficher ( “le quotient entier est:” qe )
+      r <-  a mod b
+             Afficher ( “le reste de la division  est:” r )
+     qr <- a / b
+                 Afficher ( “le quotient réel est:” qr )
+Fin_ALGORITHME 
+
+Exercice 2
+ALGORITHME Programme_cercle
+Var R ,S ,P : reels
+constante PI: reel
+Début :
+           Ecrire ( “ Entrer la valeur du rayon R” )
+           Lire ( R )
+  PI <- 4 * atan ( 1 ) 
+  S  <- PI * R* R
+   Afficher ( “ la surface du cercle est :”, S )
+  P <- 2 *PI * R
+         Afficher (“ le périmètre du cercle est:” , P )
+Fin_ALGORITHME 
+
+Exercice 3: Version 1
+
+ALGORITHME Programme_calcul_résistance
+Var R1, R2, R3, Rs, Rp : réels
+Début : 
+           Ecrire ( “ Entrer la valeur de R1”)
+           Lire  ( R1)
+           Ecrire ( “ Entrer la valeur de R2”)
+           Lire  ( R2)
+           Ecrire ( “ Entrer la valeur de R3”)
+           Lire  ( R3)
+Rs <-  R1 + R2 + R3
+          Afficher ( “la résistance en série est:”, Rs)
+Rp <- (R1 * R2 * R3 / R1 *R2 + R2 * R3 + R1 * R3)
+          Afficher ( “ la résistance en parallèle est: “ ,Rp)
+Fin_ALGORITHME 
+
+Exercice 3: Version 2
+
+Var R1, R2, R3, Rs, Rp : réels
+	choix : entier
+Début : 
+           Ecrire ( “ Entrer la valeur de R1”)
+           Lire  ( R1)
+           Ecrire ( “ Entrer la valeur de R2”)
+           Lire  ( R2)
+           Ecrire ( “ Entrer la valeur de R3”)
+           Lire  ( R3)
+	Ecrire ( “ Entrer votre choix”)
+           Lire  ( choix)
+	Si choix=1 alors
+Rs <-  R1 + R2 + R3
+          Afficher ( “la résistance en série est:”, Rs)
+        Si choix=2 alors
+Rp <- (R1 * R2 * R3 / R1 *R2 + R2 * R3 + R1 * R3)
+          Afficher ("la resitance en paralléle est:" Rp)
+Sinon  
+      Afficher ("veuillez revoir votre saisie")
+
+FIN_SI
+FIN_SINON
+FIN_ALGORITHME
+
+Exercice 4: version 1
+ALGORITHME Programme_calcul_puissance
+Var x, r : réels
+Var n : entier
+Début :
+         Ecrire ("Saisir la valeur de X")
+         Lire (X)
+         Ecrire ("Saisir la valeur de n")
+         Lire(n)
+R <- power(X,n)
+         Afficher ("le résultat est:" r)
+Fin_ALGORITHME
+
+Exercice 4: version 2
+Var x, r, i : réels
+Var n, p : entier
+Début :
+         Ecrire ("Saisir la valeur de X")
+         Lire (X)
+         Ecrire ("Saisir la valeur de n")
+         Lire(n)
+   Somme <- 1
+    i <- 0 
+Tantque i < n
+       Somme <- Somme * x
+         i <- i + 1
+FinTantque
+FIN_ALGORITHME
+         Afficher ("Somme est égale a:" Somme)
+
+
+Exercice 5
+
+ALGORITHME_calcul_somme
+Var Somme, N, valeur : entier
+   Somme <- 0
+Début :
+
+  Pour N allant de 1 à 5  faire
+       Ecrire ("Saisir une valeur")
+       Lire valeur
+Somme <- Somme + valeur
+FinPour
+Fin_ALGORITHME
+Afficher ("Somme egale:" Somme)
+
+Exercice 6
+
+ALGORITHME_calcul_distance
+Var x1, x2, y1, y2, D : entier
+ Début:
+        Ecrire("Saisir les coordonnées A, b")
+        Lire(A,b)
+D <- sqrt [(x1-x2)^2 + (y1-y2)^2]
+        Ecrire("la distance entre A et b est:" D)
+Fin_ALGORITHME
+
+Exercice 7
+
+ALGORITHME_décomposition_billet
+Var montant, nb10, nb5, nb2, nb1 : entier
+ Début:
+      Ecrire("entrer le montant")
+      Llire(montant)
+   nb10 <- montant div 10
+   nb5 <- (montant mod 10) div 5
+   nb2 <- (montant mod 5)div 2
+   nb1 <- (montant mod 5) mod 2
+     Ecrire("le nombre de billet de 10 est:" nb10)
+     Ecrire("le nombre de billet de 5 est:" nb5)
+     Ecrire("le nombre de billet de 2 est:" nb2)
+     Ecrire("le nombre de billet de 1 est:" nb1)
+Fin_ALGORITHME
+
+Exercice 8
+
+ALGORITHME_equation_second_degre
+Vr A, b, c, D, x, y : réels    (a≠0)
+Début:
+      Ecrire ("Entrer A, b, c")
+      Lire(A, b, c)
+D <- b² - 4ac
+  Afficher (D)
+ Si D > 0 alors 
+ x prend la valeur -b - sqrt(b)/2a
+ y prend la avleur -b + sqrt(b)/2a
+    Ecrire(x,y)
+FinSi
+ Si D=0 alors
+ x prend la valeur -b/2a
+    Ecrire(x)
+FinSi
+ Si D < 0 alors
+    Ecrire ("Pas de solution réelle")
+FinSI
+Fin_ALGORITHME
+
+Exercice 9: version 1
+ALGORITHME_duree_vol
+
+Var Hd(h),Hd(mn),Ha(h),Ha(mn),Dv(h),Dv(mn) : entiers
+
+Début:
+     Ecrire ("entrer heure de départ")
+     Lire(Hd(h),Hd(mn))
+     Ecrire ("entrer heure d'arrivée")
+     Lire( Ha(h),Ha(mn))
+Dv(mn) <- [(Ha(h)*60 + Ha(mn)]-[Hd(h)*60 + Hd(mn)]
+Dv(h)  <- Dv(mn)%60
+     Afficher("la durée de vol est:" Dv(h), Dv(mn))
+Fin_ALGORITHME
+
+Exercice 9: version 2
+ALGORITHME_duree_vol
+
+Var Hd(h),Hd(mn),Ha(h),Ha(mn),Dv(h),Dv(mn) : entiers
+Ecrire ("entrer heure de départ")
+     Lire(Hd(h),Hd(mn))
+     Ecrire ("entrer heure d'arrivée")
+     Lire(Ha(h),Ha(mn))
+Si   Ha(h) > Hd(h) 
+alors Dv(h)<- Hd(h) - Ha(h)
+Si  Ha(mn) > Hd(mn) 
+ alors Dv(h)<- Hd(mn) - Ha(mn)
+     Afficher(Dv(h), Dv(mn))
+FinSI
+Sinon
+    Si Ha(h) < Hd(h) alors
+     Dv(h)<- Ha(h) + 24 - Hd(h)
+    Si Ha(mn) < Hd(mn) alors
+       Dv(h)<- Ha(mn) + 60 - Hd(mn)
+FinSinon
+Sinon
+     Si Ha(mn) > Hd(mn) 
+alors
+       Dv(h)<- Ha(h) - Hd(h) + 24
+       Dv(h)<- Ha(mn) - Hd(mn)
+FinSinon
+Sinon 
+     Dv(h)<- Ha(h) - Hd(h) + 24 -1
+      Dv(h)<- Ha(mn) + 60 - Hd(mn)
+FinSinon
+Fin_ALGORITHME
+    
+
+
+Exercice 10
+var a, b, c, echange: entier
+debut:
+     ecrire (" entrer la valeur a ")
+     lire(a)
+     ecrire (" entrer la valeur b")
+     lire(b)
+     ecrire (" entrer la valeur c")
+     lire(c)
+si (a > b) alors
+        echange prend la valeur de a
+        a prend la valeur de b
+        b prend la valeur de echange
+si b > c alors
+       echange prend la valeur de b
+       b prend la valeur de c
+       c prend la valeur de echange
+si a > b alors
+       echange prend la valeur de a
+       a prend la valeur de b
+       b prend la valeur de echange
+Sinon 
+   si b < c
+       echange prend la valeur de b
+       b prend la valeur de c
+       c prend la valeur de echange
+       
+       
+FinSi
+FinSi
+FinSi
+FinSinon
+FinSi
+Fin_ALGORITHME
+Fin_ALGORITHME
+
+Exercice 11
+
+ALGORITHME_calculatrice
+Var a, b : entiers
+operation : caractére
+Début:
+     ecrire (" entrer la valeur a ")
+     lire(a)
+     ecrire (" entrer l'opération")
+     lire(operation)
+     ecrire (" entrer la valeur b")
+     lire(b)
+Selonque:
+       operation= '+'
+       ecrire ("la somme de a et b est égale, a+b)
+       operation= '*'
+       ecrire ("le produit de a et b est égale, a*b)
+       operation= '/'  
+ si b=0  alors
+       ecrire ("division impossible")
+Sinon
+       ecrire ("la division de a et b est égale, a/b)
+FinSi
+     operation= '-'
+     ecrire ("la soustraction de a et b est égale, a-b)
+    Sinon 
+    ecrire ("opération invalide")
+FinSi
+FinSelonque
+Fin_ALGORITHME
+
+Exercice 12
+
+ALGORITHME_nombre_parfait
+Var N, K, R, Somme : entiers
+
+Début:
+      ecrire("entrer le nombre entier")
+ Somme <- 0
+Pour K allant de 1 à (N-1)
+    R <- (N mod K)
+Si R=0  alors
+    Somme <- Somme + K
+FinSi
+FinPour
+Si Somme=N   alors
+          afficher("N est parfait")
+  Sinon
+          afficher ("N n'est pas parfait")
+          
+FinSi
+Fin_ALGORITHME
+
+Exercice 13
+
+ALGORITHME_Date
+Var jour, mois, annee : nombre
+Début :
+       ecrire("entrer la date")
+       lire(jour, mois, année)
+ Si mois>12 ou jour>31 ou année>2009
+       afficher("la date n'est pas valide")
+Sinon
+    ecrire("la date est valide")
+FinSi
+Fin_ALGORITHME
+
+
+
+
+ 
+
+   
+       
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
