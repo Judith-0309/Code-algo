@@ -1,0 +1,262 @@
+Exercice 14
+ALGORITHME_année_bissextile
+
+Var jour, mois, annee : nombre
+Début:
+      ecrire("entrer la date")
+      lire (jour,mois,annee)
+
+   Si (annee % 4=0 and (annee % 100!=0 or annee % 400==0)
+    afficher("L'annee est une annee bissextile")
+FinSi
+Sinon:
+    afficher("L'annee n'est pas une annee bissextile!")
+FinSinon
+Fin_ALGORITHME
+
+
+Exercice 15
+
+ALGORITHME_moyenne_nombres
+Var i, Somme, val : entiers
+moyenne : réel
+Début:
+        Somme<- 0
+   Pour i allant de 1 à valeur     faire
+          Somme<- Somme + i 
+         moyenne<- Somme div val
+FinPour
+       Afficher(" la somme des nombres de 1 à val est:",somme)
+
+Fin_ALGORITHME
+
+
+Exercice 16
+
+ALGORITHME_soustraction_successives
+
+Var a,b,quotient   :entiers
+Début:
+      quotient<-0
+Tantque a >= b  faire
+          a <- a-b
+    quotient <- quotient+ 1
+FinTantque
+       Affficher ("le quotient de la division par soustraction successives est:";quotient)
+Fin_ALGORITHME
+
+
+Exercice 17
+
+ALGORITHME_PGCD
+ Var a,b,PGCD : 
+ Début:
+     REPETER
+ SELONQUE
+        a>b : a <- a-b
+        a<b : b <- b-a
+FINSELON
+JUSQU'A a=b
+retourner(a)
+     afficher("le PGCD de a et b est:"; a)
+     
+FIN_ALGORITHME
+
+
+Exercice 18
+
+ALGORITHME_PPCM
+Var a,b,x,y,PPCM: entiers
+Début:
+
+  ecricre("entrer la valeur de a : ")
+      lire(a)
+      ecrire("Entrer la valeur de b : ")
+      Lire(b)
+      pgcd <- 0
+      Si (a >= b) alors
+              Tant que (a != b) faire
+                     a <- a-b
+                     PGCD <- PGCD+1
+        FinTant que
+                     PPCM <- (a*b)/PGCD
+      FinSi
+               Afficher("le PPCM de a et b est : ", PPCM)
+ 
+
+Fin_ALGORITHME
+
+
+Exercice 19 
+
+ALGORITHME_Somme_Prix 
+VAR p, S : entiers
+ Début:
+       ecrire ("entrer Le prix du premier article")
+       lire (p)
+S <- 0
+Repeter 
+     S <- S + p
+    ecrire ("entrer Le prix du second article")
+     lire (p)
+Jusqu'a   (p!=0)
+     ecrire ("entrer la somme des prix des articles est:",S)
+Fin_ALGORITHME
+
+
+Exercice 20
+
+ALGORITHME_plusgrand_10nombres
+Const nbre = 10;
+Var indice , val : entier
+Indice_grand, PLUSGRAND :ENTIER 
+
+Début
+     Ecrire("entrez le 1er nombre : ")
+      Lire (val)
+    PLUSGRAND <- val
+    Indice_grand <- 1
+Pour indice allant de 2 à nbre
+    ecrire("entrez le nombre numéro", indice)
+    lire (val)
+Si val > PLUSGRAND alors
+Indice_grand <- indice 
+PLUSGRAND <- val
+FinSI
+FinPour
+afficher("le plus grand de ces nombres est:", PLUSGRAND)
+afficher(" c'était le ",indice_grand, " ème nombre saisi)
+Fin_ALGORITHME
+
+Exercice 21
+
+ALGORITHME_devinette
+VAR a, n, t : entiers
+Début
+    ecrire(" entrez le nombre à deviner")
+    Lire (a)
+ecrire("entrez le nombre ( premier essai"))
+   lire (n)
+t <- 1
+TANTQUE ( a!=n )  FAIRE
+SI n>a ALORS 
+ECRIRE (" nombre cherché plus petit que : ",n )
+SINON 
+ECRIRE (" nombre cherché plus grand que ",n)
+FINSI
+   t <- t+1
+ECRIRE("entrez un autre nombre (tentative N° ",t,")")
+LIRE (n)
+FINTANTQUE
+      ecrire (" c'est gagné : le nombre de tentatives est:" ,t)
+FIN_ALGORITHME
+
+Exercice 22
+ALGORITHME_sequence
+var N,i,stock, stock1, tableau [1, n],Seq,n : entier 
+Debut:
+   repeter (« saisir des nombres entiers différents compris entre 10 et 50 et allant de 1 à 100 » )    
+     lire ( N )
+  jusqu’à ( N >= 10 et <= 50 ) et ( n> = 1 et n<= 100 )  
+     lire ( N )
+       afficher ( « les nombres entiers différents compris entre 10 et 50 est : » N  ) 	
+repeter   afficher (n)    
+	Jusqu’à ( n = N )  
+	pour i allant de 1 à n 					
+	Seq <- 0      faire
+         t(i+1) - t(i)					
+	stock <- Seq +1
+	Pour i allant de  1 à n								
+repeter  t(i +1) - T(i)
+	stock <- Seq +i
+Jusqu’à  t(i +1) - t(i) < 0 
+	afficher ("la longueur de la séquence la plus longue est: " ;Seq)	
+FinPour
+   stock1 <- Stock
+Si stock1 > stock
+	Afficher ("elle débute à la position:"; stock1)
+	Sinon afficher ("elle débute à la position:"; stock)
+	FinSi
+
+Fin_ALGORITHME
+
+
+
+Exercice 23
+ALGORITHME_Nbre_lapins
+
+Var F0,F1,Fx,i, N_Mois : nombres
+ 
+Début:
+        F1 <- 2
+        F2 <- 4
+Pour i allant de 0 à 11  faire
+      Fx <- F2 + F1
+      F1 <- F2
+      F2 <- Fx
+FinPour
+      afficher ("le nombre de lapin pour les 12 mois est egal:" Fx)
+
+        F0 <- 2
+        F1 <- 2
+   N_Mois  <- 0
+        Fx <- 0
+Tantque (Fx < 1000000000)     faire
+       Fx <- F1 + F0
+       F0 <- F1 
+       F1 <- Fx
+   N_Mois <- N_Mois + 1
+FinTantque
+    aficher("C'est au bout de N_Mois que nous depasserons 1Milliard de lapins:" N_Mois)
+Fin_ALGORITHME
+  
+
+
+Exercice 26
+
+ALGORITHME_ordre
+
+Var nb,i,j,C,D,val : entiers
+Var T : tableau
+
+Début:
+       ecrire(" entrez le nombre de valeurs que vous souhaitez entrés")
+        lire(nbre de valeurs)
+T(i) <- val
+  Pour i allant de 0 à nb-1
+   lire(val)
+FinPour
+C <- 1
+D <- 1
+Pour j allant de 0 à nb-1    faire
+    Si T(j) > T(j+1)   donc
+      C <- 0
+ Si T(j) < T(j+1)   donc
+      D <- 0
+FinSsi
+FinPour
+ 
+Si C=1  afficher("les valeurs entrées sont dans l'ordre croissant")
+ Sinon 
+Si D=1  afficher("les valeurs entrées sont dans l'ordre décroissant")
+ Sinon  afficher("les valeurs entrées sont dans l'ordre quelconque")
+FinSi
+Fin_ALGORITHME
+
+
+
+
+
+       
+
+
+  
+ 
+ 
+ 
+
+
+
+
+
+            
